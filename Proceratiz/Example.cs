@@ -1,6 +1,6 @@
-﻿using Generatix;
+﻿using Proceratiz;
 
-namespace Generatix
+namespace Proceratiz
 {
     class Example
     {

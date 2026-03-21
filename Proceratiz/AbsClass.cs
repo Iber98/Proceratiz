@@ -1,4 +1,4 @@
-﻿namespace Generatix
+﻿namespace Proceratiz
 {
     public abstract class Geracao
     {

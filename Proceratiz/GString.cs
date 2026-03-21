@@ -1,7 +1,7 @@
-﻿using Generatix;
+﻿using Proceratiz;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Generatix
+namespace Proceratiz
 {
     //Em Construção
     public class GString : Geracao
