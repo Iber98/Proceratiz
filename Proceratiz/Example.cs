@@ -4,8 +4,6 @@ namespace Proceratiz
 {
     class Example
     {
-        // "Limit" só Deve ser Usado em Geração de Números
-
         static void Main()
         {
             try
