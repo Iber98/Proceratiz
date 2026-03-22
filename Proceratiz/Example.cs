@@ -8,21 +8,27 @@ namespace Proceratiz
 
         static void Main()
         {
-            var letters = new GString();
+            try
+            {
+                var letters = new GString();
 
-            Console.Write(" Digite a Seed: ");
-            letters.Seed = Convert.ToInt32(Console.ReadLine());
+                Console.Write(" Digite a Seed: ");
+                letters.Seed = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write(" Digite Quantas Letras serão Geradas: ");
-            letters.Quantity = Convert.ToInt32(Console.ReadLine());
+                Console.Write(" Digite Quantas Letras serão Geradas: ");
+                letters.Quantity = Convert.ToInt32(Console.ReadLine());
 
 
-            Console.Write(" Digite a Letra que Deseja Verificar: ");
-            string? letter = (Console.ReadLine());
+                Console.Write(" Digite a Letra que Deseja Verificar: ");
+                string? letter = (Console.ReadLine());
 
-            //var matriz = new int[letter.Limit];
+                letters.GeracaoProcedural(letter);
+            }
 
-            letters.GeracaoProcedural(letter);
+            catch
+            {
+                Console.Write("Digite Valores Válidos!!!");
+            }
         }
     }
 }
