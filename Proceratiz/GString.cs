@@ -4,31 +4,24 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Proceratiz
 {
     //Em Construção
+
     public class GString : Geracao
     {
-        public void GeracaoProcedural(string? letter)
+        public override event EventHandler<string>? ItemGerado;
+
+        //Gera Proceduralmente Letras do index Minimo ao Máximo de uma Coleção Genérica
+        //A Quantidade de Letras Gerados Depende do Tamanho da Coleção
+        public IEnumerable<string> GeracaoProcedural(IEnumerable<string> items)
         {
-            const string letters = "abcdefghijklmnopqrstuvwxyz";
-            int apparition = 0;
-            var random = new Random(Seed);
+            var random = new Random();
+            var list = items.ToArray();
 
-            if ((letter != null) && (letter != ""))
+            foreach (var i in list)
             {
-                letter.ToLower();
+                ItemGerado?.Invoke(this, "Item Gerado");
 
-                for (int l = 0; l < Quantity; l++)
-                {
-                    string generator = Convert.ToString(letters[random.Next(0, 25)]);
-
-                    if (letter == generator) apparition++;
-
-                    Console.WriteLine($"[{generator}]");
-                }
-
-                Console.WriteLine($"Sua Letra Apareceu {apparition} Vezes");
+                yield return list[random.Next(0, list.Length)];
             }
-
-            else Console.Write("Inválido");
         }
     }
 }

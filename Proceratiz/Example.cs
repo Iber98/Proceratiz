@@ -6,29 +6,35 @@ namespace Proceratiz
     {
         // "Limit" só Deve ser Usado em Geração de Números
 
-        static void Main()
+        async static void Main()
         {
             try
             {
-                var letters = new GString();
+                var gerador = new GString();
 
-                Console.Write(" Digite a Seed: ");
-                letters.Seed = Convert.ToInt32(Console.ReadLine());
+                //Expressão Lambda Assinante
+                gerador.ItemGerado += (obj, msg) => Console.WriteLine(msg);
 
-                Console.Write(" Digite Quantas Letras serão Geradas: ");
-                letters.Quantity = Convert.ToInt32(Console.ReadLine());
+                //Coleção
+                var list = new List<string> { "adkvc", "sdvh", "dwkgbv", "dalikkib", "odiwgb" };
 
+                //Entrada para a Seed da Geração
+                gerador.Seed = Convert.ToInt32(Console.ReadLine());
 
-                Console.Write(" Digite a Letra que Deseja Verificar: ");
-                string? letter = (Console.ReadLine());
-
-                letters.GeracaoProcedural(letter);
+                //Saída e Notificação do Evento
+                foreach (var g in gerador.GeracaoProcedural(list)) 
+                {
+                    await TimeDelay(1000);
+                    Console.WriteLine(g);
+                }
             }
 
-            catch
+            catch(FormatException)
             {
-                Console.Write("Digite Valores Válidos!!!");
+                Console.Write(" Digite uma Seed Númerica!!!");
             }
         }
+
+        private static async Task TimeDelay(int time) => await Task.Delay(time);
     }
 }
