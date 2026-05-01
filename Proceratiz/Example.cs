@@ -4,9 +4,13 @@ namespace Proceratiz
 {
     class Example
     {
+<<<<<<< HEAD
         // "Limit" só Deve ser Usado em Geração de Números
 
         async static void Main()
+=======
+        static void Main()
+>>>>>>> c032955e22d3b6a5d1a7d1236ce394be0419c3e8
         {
             try
             {

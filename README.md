@@ -1,4 +1,4 @@
-Biblioteca de Geração Procedural em Estado Inicial
+Biblioteca de Geração Procedural em Construção
 
 Geração de Palavras está Planejado para o Futuro
 
