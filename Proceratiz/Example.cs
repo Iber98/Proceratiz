@@ -5,7 +5,6 @@ namespace Proceratiz
     class Example
     {
         async static void Main()
-        static void Main()
         {
             try
             {
